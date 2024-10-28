@@ -95,7 +95,7 @@
 
 <div class="container">
   <h2>Enter your links</h2>
-  <form id="dynamicForm" onsubmit="handleSubmit(event)">
+  <form action="{{ url_for('submit_form') }}" method="post" id="dynamicForm">
     <!-- Rows will be added here -->
   </form>
   <button class="add-button" onclick="addRow()">Add Row</button>
@@ -141,21 +141,6 @@
 
   // Add an initial row when the page loads
   document.addEventListener("DOMContentLoaded", () => addRow());
-
-  // Handle form submission
-  function handleSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    const formData = new FormData(document.getElementById("dynamicForm"));
-    const entries = Array.from(formData.entries());
-    
-    let result = "Form Data:\n";
-    entries.forEach(entry => {
-      result += `${entry[0]}: ${entry[1]}\n`;
-    });
-
-    alert(result); // Display form data in an alert
-  }
 </script>
 
 </body>
