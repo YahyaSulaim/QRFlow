@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1c1c1c; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    margin: 0;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 600px; /* Increased width for image upload */
+    background-color: #2a2a2a; /* Slightly lighter background for the container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #d0d0d0; /* Soft light color for headings */
+  }
+  
+  .title-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .title-container h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Applying the Montserrat font */
+    color: #e0e0e0; /* Soft light color for title */
+  }
+  
+  .title-container p {
+    font-size: 1.2em;
+    color: #b0b0b0; /* Lighter text for description */
+  }
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-row input[type="text"],
+  .form-row input[type="number"],
+  .form-row input[type="file"] {
+    padding: 8px;
+    border: 1px solid #444; /* Darker border */
+    border-radius: 4px;
+    width: 100%;
+    margin-right: 10px;
+    background-color: #333; /* Input background */
+    color: #e0e0e0; /* Input text color */
+  }
+  
+  .form-row button {
+    padding: 8px 12px;
+    background-color: #4CAF50; /* Soft green button color */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .form-row button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+  
+  .add-button {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #007BFF; /* Soft blue button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6c757d; /* Muted gray button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+  }
+  
