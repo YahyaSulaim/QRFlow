@@ -5,17 +5,21 @@ from PIL import Image, ImageFont, ImageDraw
 import zipfile
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads/'
+app.config['UPLOAD_FOLDER'] = '/tmp/uploads/'  # Use the /tmp directory for uploads
 
 A4_WIDTH, A4_HEIGHT = (2480, 3508)  # A4 dimensions at 300 DPI
 MARGIN = 50  # Margin around each QR code
 GRID_COLUMNS = 3  # Number of QR codes per row
 
-
 def clear_upload_folder():
     """Delete all files in the upload folder."""
-    for filename in os.listdir(app.config['UPLOAD_FOLDER']):
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    upload_folder = app.config['UPLOAD_FOLDER']
+    # Create the upload folder if it does not exist
+    if not os.path.exists(upload_folder):
+        os.makedirs(upload_folder)
+
+    for filename in os.listdir(upload_folder):
+        file_path = os.path.join(upload_folder, filename)
         try:
             if os.path.isfile(file_path):
                 os.remove(file_path)
@@ -60,8 +64,6 @@ def submit_form():
     else:
         # Send the single A4 sheet if only one was created
         return send_file(a4_sheet_paths[0], as_attachment=True)
-    
-    
 
 def create_a4_qr_sheets(qr_data):
     cell_width = (A4_WIDTH - (GRID_COLUMNS + 1) * MARGIN) // GRID_COLUMNS
@@ -119,6 +121,7 @@ def create_a4_qr_sheets(qr_data):
     return a4_sheet_paths
 
 if __name__ == '__main__':
+    # Ensure the upload folder exists
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)
