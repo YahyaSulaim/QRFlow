@@ -16,6 +16,7 @@ QR-Flow is a web app that generates bulk QR codes and arranges them into print-r
 - **ImgurAPI** (Image uploading)
 
 ![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
-![Pillow](https://img.shields.io/badge/Pillow-000000?style=flat&logo=pillow&logoColor=white)
-![Imgur](https://img.shields.io/badge/Imgur-1BB13E?style=flat&logo=imgur&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Pillow](https://img.shields.io/badge/Pillow-000000?style=flat&logo=pillow&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Imgur](https://img.shields.io/badge/Imgur-1BB13E?style=flat&logo=imgur&logoColor=white)
