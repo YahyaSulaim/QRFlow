@@ -5,7 +5,7 @@ from PIL import Image, ImageFont, ImageDraw
 import zipfile
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = '/tmp/uploads/'  # Use the /tmp directory for uploads
+app.config['UPLOAD_FOLDER'] = '/tmp/uploads/' 
 
 A4_WIDTH, A4_HEIGHT = (2480, 3508)  # A4 dimensions at 300 DPI
 MARGIN = 50  # Margin around each QR code
@@ -29,7 +29,7 @@ def clear_upload_folder():
 
 @app.route('/')
 def index():
-    clear_upload_folder()  # Clear the upload folder on each page refresh
+    clear_upload_folder()
     return render_template('index.html')
 
 @app.route('/submit', methods=['POST'])
@@ -45,7 +45,7 @@ def submit_form():
             count = int(number)
             qr = segno.make(text, error='h')
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], f'qr_code_{index}.png')
-            qr.save(image_path, kind='png', scale=10, border=2)  # Decreased border
+            qr.save(image_path, kind='png', scale=10, border=2)
             
             qr_image_paths.append(image_path)
             qr_data.append((image_path, count))
@@ -121,7 +121,7 @@ def create_a4_qr_sheets(qr_data):
     return a4_sheet_paths
 
 if __name__ == '__main__':
-    # Ensure the upload folder exists
+
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)

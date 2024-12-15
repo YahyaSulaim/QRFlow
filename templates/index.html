@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Form with Validation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to the CSS file -->
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR-Flow</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Link to the CSS file -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-container">
+        <h1>QR-Flow</h1>
+        <p>Easily generate QR codes in bulk for printing and sharing.</p>
+      </div>
+      <h2 id="enter-links">Enter your links</h2>
+      <form
+        action="{{ url_for('submit_form') }}"
+        method="post"
+        id="dynamicForm"
+      >
+        <!-- Rows will be added here -->
+      </form>
+      <button class="add-button" onclick="addRow()">Add Row</button>
+      <button type="submit" class="submit-button" form="dynamicForm">
+        Download
+      </button>
+    </div>
 
-<div class="container">
-  <div class="title-container">
-    <h1>QR-Flow</h1>
-    <p>Easily generate QR codes in bulk for printing and sharing.</p>
-  </div>
-  <h2>Enter your links</h2>
-  <form action="{{ url_for('submit_form') }}" method="post" id="dynamicForm">
-    <!-- Rows will be added here -->
-  </form>
-  <button class="add-button" onclick="addRow()">Add Row</button>
-  <button type="submit" class="submit-button" form="dynamicForm">Download</button>
-</div>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script> <!-- Link to the JavaScript file -->
-</body>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
 </html>
