@@ -5,16 +5,15 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
-  ],
+
   "rewrites": [
     {
       "source": "/qrflow",
       "destination": "https://qrflow-xi.vercel.app/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "app.py"
     }
   ]
 }
